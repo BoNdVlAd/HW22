@@ -1,7 +1,6 @@
 import React from 'react';
 import { styled } from 'styled-components';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import Container from './../components/Container';
 import Header from './../components/Header';
 
 const Flex = styled.div`
@@ -33,11 +32,9 @@ const Root = () => {
       <Flex>
         <Header />
         <Main>
-          <Container>
-            <div id="detail">
-              <Outlet />
-            </div>
-          </Container>
+          <div id="detail">
+            <Outlet />
+          </div>
         </Main>
         <Footer>All rights reserved</Footer>
       </Flex>

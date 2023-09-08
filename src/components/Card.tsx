@@ -9,16 +9,22 @@ const Wrapper = styled.div`
   margin: 0 auto;
   border-radius: 25px;
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
-const Container = ({ children }: any) => {
+const Card = ({ children }: any) => {
   return (
     <>
-      <Wrapper>
-        <div>{children}</div>
-      </Wrapper>
+      <Wrapper>{children}</Wrapper>
     </>
   );
 };
 
-export default Container;
+export default Card;

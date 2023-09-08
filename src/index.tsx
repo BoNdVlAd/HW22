@@ -7,6 +7,7 @@ import Root from './routes/Root';
 import ErrorPage from './pages/error-page';
 import Projects from './routes/Projects';
 import Stack from './routes/Stack';
+import Project from './routes/Project';
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: 'stack',
         element: <Stack />,
+      },
+      {
+        path: 'projects/:projectId',
+        element: <Project />,
       },
     ],
   },
