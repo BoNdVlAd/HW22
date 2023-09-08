@@ -2,31 +2,35 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { styled } from 'styled-components';
+import { Translation } from 'react-i18next';
+import ChangeLang from './ChangeLang';
 
 const Flex = styled.div`
   display: flex;
   justify-content: center;
+
   @media only screen and (max-width: 1024px) {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
-  }
-  a {
-    color: red;
+    gap: 15px;
+    padding-top: 15px;
   }
 `;
 
 const Logo = styled.p`
   font-family: 'Dancing Script', cursive;
-  padding: 0;
+  padding: 0 0 0 20px;
   margin: 0;
   color: #fff;
   font-size: 32px;
   font-weight: 700;
   user-select: none;
   justify-self: start;
+  @media only screen and (max-width: 1024px) {
+    padding: 0;
+  }
 `;
 
 const Navigation = styled.nav`
@@ -36,7 +40,7 @@ const Navigation = styled.nav`
   grid-auto-columns: 1fr 10fr;
   grid-auto-flow: column;
   align-items: center;
-  padding: 0px 20px;
+
   a {
     font-size: 20px;
     font-weight: 500;
@@ -74,24 +78,24 @@ const Navigation = styled.nav`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     background-color: #2b303a;
     transition: all ease 0.3s;
     transform: translateY(-100vh);
     a {
-      font-size: 24px;
-      padding: 20px 0;
+      width: 50%;
+      text-align: center;
+      &:not(:last-child):after {
+        content: '';
+        display: none;
+      }
       &:not(:first-child):after {
         content: '';
         display: block;
-        width: 1rem;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        height: 1.5px;
+        width: 100%;
+        height: 1px;
         background: #fff;
-
-        top: 0px;
+        right: 0;
+        top: -25%;
         position: absolute;
         pointer-events: none;
       }
@@ -112,7 +116,7 @@ const NavBtn = styled.button`
   cursor: pointer;
   padding: 5px;
   display: none;
-  justify-content: right;
+  justify-content: space-between;
   align-items: center;
   padding: 10px;
   user-select: none;
@@ -151,7 +155,7 @@ const Header = () => {
   const navRef = React.useRef<HTMLElement>(null);
   const navigate = useNavigate();
 
-  const pages: string[] = ['projects', 'stack', 'hello'];
+  const pages: string[] = ['projects', 'stack', 'hello', 'Hi'];
   const [active, setActive] = React.useState(0);
 
   const showNavigation = () => {
@@ -187,12 +191,15 @@ const Header = () => {
               {e}
             </Link>
           ))}
+
+          <Translation>{(t) => <ChangeLang t={t} />}</Translation>
         </Flex>
         <CloseNavBtn onClick={showNavigation}>
           <FaTimes />
         </CloseNavBtn>
       </Navigation>
       <NavBtn>
+        <Logo>BOND_PORTFOLIO</Logo>
         <FaBars onClick={showNavigation} />
       </NavBtn>
     </>
