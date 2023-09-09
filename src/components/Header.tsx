@@ -2,8 +2,8 @@ import React from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { styled } from 'styled-components';
-import { Translation } from 'react-i18next';
-import ChangeLang from './ChangeLang';
+import { Translation, useTranslation } from 'react-i18next';
+import LanguageChanger from './LanguageChanger';
 
 const Flex = styled.div`
   display: flex;
@@ -34,6 +34,7 @@ const Logo = styled.p`
 `;
 
 const Navigation = styled.nav`
+  position: fixed;
   min-height: 80px;
   background-color: #2b303a;
   display: grid;
@@ -81,6 +82,7 @@ const Navigation = styled.nav`
     background-color: #2b303a;
     transition: all ease 0.3s;
     transform: translateY(-100vh);
+    z-index: 100;
     a {
       width: 50%;
       text-align: center;
@@ -107,21 +109,23 @@ const Navigation = styled.nav`
 `;
 
 const NavBtn = styled.button`
+  width: 100%;
   color: #fff;
   font-size: 1.8rem;
   background-color: #2b303a;
   border: none;
-  opacity: 0;
   outline: none;
   cursor: pointer;
-  padding: 5px;
+  opacity: 0;
   display: none;
+  padding: 5px;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
   user-select: none;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
   -webkit-tap-highlight-color: transparent;
+  position: fixed;
 
   @media only screen and (max-width: 1024px) {
     opacity: 1;
@@ -152,10 +156,22 @@ const CloseNavBtn = styled.button`
 `;
 
 const Header = () => {
+  //languages
+  const [t, i18n] = useTranslation();
+
+  const changleLanguage = (language: any) => {
+    console.log('CHANGE to', language);
+    i18n.changeLanguage(language);
+  };
+
   const navRef = React.useRef<HTMLElement>(null);
   const navigate = useNavigate();
+  console.log(t('pages.title1'));
 
-  const pages: string[] = ['projects', 'stack', 'hello', 'Hi'];
+  const links = ['projects', 'stack'];
+
+  const pages: string[] = t('pages', { returnObjects: true });
+
   const [active, setActive] = React.useState(0);
 
   const showNavigation = () => {
@@ -187,17 +203,17 @@ const Header = () => {
             <Link
               className={active === index ? 'active' : ''}
               onClick={() => handleNavigation(index)}
-              to={e}>
+              to={links[index]}>
               {e}
             </Link>
           ))}
-
-          <Translation>{(t) => <ChangeLang t={t} />}</Translation>
         </Flex>
         <CloseNavBtn onClick={showNavigation}>
           <FaTimes />
         </CloseNavBtn>
+        <LanguageChanger changleLanguage={(value: string) => changleLanguage(value)} />
       </Navigation>
+
       <NavBtn>
         <Logo>BOND_PORTFOLIO</Logo>
         <FaBars onClick={showNavigation} />

@@ -2,6 +2,8 @@ import React from 'react';
 import { styled } from 'styled-components';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 import Header from './../components/Header';
+import i18n from '../i18n';
+import { useTranslation } from 'react-i18next';
 
 const Flex = styled.div`
   display: flex;
@@ -13,6 +15,10 @@ const Main = styled.div`
   padding: 20px 10px;
   flex: 1 1 auto;
   background-color: #e5e7e9;
+  margin-top: 80px;
+  @media only screen and (max-width: 1024px) {
+    margin-top: 58px;
+  }
 `;
 
 const Footer = styled.div`
@@ -27,6 +33,12 @@ const Footer = styled.div`
 `;
 
 const Root = () => {
+  const [t, i18n] = useTranslation();
+
+  const changleLanguage = (language: any) => {
+    i18n.changeLanguage(language);
+  };
+
   return (
     <>
       <Flex>
