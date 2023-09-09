@@ -27,10 +27,10 @@ const Post = (props: data) => {
   return (
     <>
       <Card>
+        <span className="fi fi-ua"></span>
         <Link to={`${id}`}>
           <Title>{title}</Title>
         </Link>
-
         <p>{text}</p>
         <ContentImg src={mainImg} alt="imageContent" />
       </Card>

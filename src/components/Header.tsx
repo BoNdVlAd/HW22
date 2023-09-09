@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from 'react-icons/fa';
 import { styled } from 'styled-components';
 import { Translation, useTranslation } from 'react-i18next';
 import LanguageChanger from './LanguageChanger';
+import { useSelector } from 'react-redux';
 
 const Flex = styled.div`
   display: flex;
@@ -159,16 +160,17 @@ const Header = () => {
   //languages
   const [t, i18n] = useTranslation();
 
-  const changleLanguage = (language: any) => {
-    console.log('CHANGE to', language);
-    i18n.changeLanguage(language);
-  };
+  const currentLanguage = useSelector((state: any) => state.language.language);
+
+  React.useEffect(() => {
+    i18n.changeLanguage(currentLanguage);
+  }, [currentLanguage]);
 
   const navRef = React.useRef<HTMLElement>(null);
   const navigate = useNavigate();
   console.log(t('pages.title1'));
 
-  const links = ['projects', 'stack'];
+  const links = ['projects', 'stack', 'contacts'];
 
   const pages: string[] = t('pages', { returnObjects: true });
 
@@ -211,7 +213,7 @@ const Header = () => {
         <CloseNavBtn onClick={showNavigation}>
           <FaTimes />
         </CloseNavBtn>
-        <LanguageChanger changleLanguage={(value: string) => changleLanguage(value)} />
+        <LanguageChanger />
       </Navigation>
 
       <NavBtn>

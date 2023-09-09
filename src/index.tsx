@@ -8,6 +8,8 @@ import Projects from './routes/Projects';
 import Stack from './routes/Stack';
 import Project from './routes/Project';
 import './i18n';
+import { Provider } from 'react-redux';
+import { store } from './store';
 
 const router = createBrowserRouter([
   {
@@ -34,8 +36,10 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <Suspense fallback={<div>...Loading</div>}>
-      <RouterProvider router={router} />
-    </Suspense>
+    <Provider store={store}>
+      <Suspense fallback={<div>...Loading</div>}>
+        <RouterProvider router={router} />
+      </Suspense>
+    </Provider>
   </React.StrictMode>,
 );

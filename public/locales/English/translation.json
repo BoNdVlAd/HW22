@@ -1,5 +1,5 @@
 {
-  "pages": ["projects", "stack"],
+  "pages": ["projects", "stack", "contacts"],
   "projects": [
     {
       "id": 1,
