@@ -27,7 +27,6 @@ const Post = (props: data) => {
   return (
     <>
       <Card>
-        <span className="fi fi-ua"></span>
         <Link to={`${id}`}>
           <Title>{title}</Title>
         </Link>

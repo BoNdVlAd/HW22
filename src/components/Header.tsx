@@ -168,11 +168,11 @@ const Header = () => {
 
   const navRef = React.useRef<HTMLElement>(null);
   const navigate = useNavigate();
-  console.log(t('pages.title1'));
 
   const links = ['projects', 'stack', 'contacts'];
 
   const pages: string[] = t('pages', { returnObjects: true });
+  console.log('RESULT', pages);
 
   const [active, setActive] = React.useState(0);
 
