@@ -6,6 +6,7 @@ import Card from './Card';
 const ContentImg = styled.img`
   max-width: 100%;
   max-height: 400px;
+  border-radius: 20px;
 `;
 
 interface data {
@@ -14,6 +15,11 @@ interface data {
   mainImg?: string;
   text?: string;
 }
+
+const ContentText = styled.p`
+  font-weight: 400;
+  text-align: center;
+`;
 
 const Title = styled.h2`
   &:hover {
@@ -30,8 +36,8 @@ const Post = (props: data) => {
         <Link to={`${id}`}>
           <Title>{title}</Title>
         </Link>
-        <p>{text}</p>
         <ContentImg src={mainImg} alt="imageContent" />
+        <ContentText>{text}</ContentText>
       </Card>
     </>
   );

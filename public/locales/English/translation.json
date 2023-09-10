@@ -3,9 +3,9 @@
   "projects": [
     {
       "id": 1,
-      "title": "Project # 1",
-      "mainImg": "images/project1/Capture.PNG",
-      "text": "Creating a slice requires a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated. Once a slice is created, we can export the generated Redux action creators and the reducer function for the whole slice.",
+      "title": "ReactJS. Fundamentals",
+      "mainImg": "images/project1/mainImg.png",
+      "text": "A functional component that can be used to display a post (like on Twitter or Facebook).",
       "imgs": [
         "images/project1/Capture.PNG",
         "images/project1/Capture.PNG",
@@ -15,27 +15,33 @@
     },
     {
       "id": 2,
-      "title": "Project # 2",
-      "mainImg": "images/project1/Capture.PNG",
-      "text": "Creating a slice requires a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated. Once a slice is created, we can export the generated Redux action creators and the reducer function for the whole slice."
+      "title": "ReactJS. Hooks",
+      "mainImg": "images/project2/mainImg.png",
+      "text": "List of contacts with search by name, number, and filters (by gender)."
     },
     {
       "id": 3,
-      "title": "Project # 3",
-      "mainImg": "images/project1/Capture.PNG",
-      "text": "Creating a slice requires a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated. Once a slice is created, we can export the generated Redux action creators and the reducer function for the whole slice."
+      "title": "ReactJS. Class components State and life cycle",
+      "mainImg": "images/project3/mainImg.png",
+      "text": "Countdown timer"
     },
     {
       "id": 4,
-      "title": "Project # 4",
-      "mainImg": "images/project1/Capture.PNG",
-      "text": "Creating a slice requires a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated. Once a slice is created, we can export the generated Redux action creators and the reducer function for the whole slice."
+      "title": "ReactJS. The concept of SPA. Navigation.",
+      "mainImg": "images/project4/mainImg.png",
+      "text": "A simple SPA with four pages of navigation."
     },
     {
       "id": 5,
-      "title": "Project # 5",
-      "mainImg": "images/project1/Capture.PNG",
-      "text": "Creating a slice requires a string name to identify the slice, an initial state value, and one or more reducer functions to define how the state can be updated. Once a slice is created, we can export the generated Redux action creators and the reducer function for the whole slice."
+      "title": "ReactJS. Approaches to styling. StyledComponents. Animations.",
+      "mainImg": "images/project5/mainImg.png",
+      "text": "Login and registration form in the application (with data validation check during registration)."
+    },
+    {
+      "id": 6,
+      "title": "Redux",
+      "mainImg": "images/project6/mainImg.png",
+      "text": "An application that contains a post creation form and a page displaying created posts. For global post saving, we used react-redux (Redux Toolkit)."
     }
   ]
 }
