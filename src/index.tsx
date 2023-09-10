@@ -10,6 +10,7 @@ import Project from './routes/Project';
 import './i18n';
 import { Provider } from 'react-redux';
 import { store } from './store';
+import Contacts from './routes/Contacts';
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: 'stack',
         element: <Stack />,
+      },
+      {
+        path: 'contacts',
+        element: <Contacts />,
       },
       {
         path: 'projects/:projectId',

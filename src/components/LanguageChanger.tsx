@@ -21,6 +21,9 @@ const Choosed = styled.div`
   svg {
     transform: rotate(90deg);
     transition: all ease 0.3s;
+    &.active {
+      transform: rotate(0deg);
+    }
   }
 `;
 
@@ -57,10 +60,15 @@ const Item = styled.div`
 const LanguageChanger = ({ changleLanguage }: any) => {
   const dispatch = useDispatch();
   const currentLanguage = useSelector((state: any) => state.language.language);
-  console.log(currentLanguage);
   const [isActive, setIsActive] = React.useState(false);
   const contentRef = React.useRef<any>(null);
   const wrapperRef = React.useRef<any>(null);
+
+  React.useEffect(() => {
+    if (localStorage.getItem('language')) {
+      dispatch(setLanguage(localStorage.getItem('language')));
+    }
+  }, []);
 
   const handleClickOutside = (e: any) => {
     if (contentRef.current && wrapperRef.current && !wrapperRef.current.contains(e.target)) {
@@ -81,6 +89,7 @@ const LanguageChanger = ({ changleLanguage }: any) => {
     });
   }
   function handleSelect(e: string) {
+    localStorage.setItem('language', e);
     dispatch(setLanguage(e));
     setIsActive(false);
   }
@@ -106,7 +115,7 @@ const LanguageChanger = ({ changleLanguage }: any) => {
           )}
 
           <svg
-            // className={isActive ? 'active' : ''}
+            className={isActive ? 'active' : ''}
             height="30px"
             id="Layer_1"
             version="1.1"

@@ -8,6 +8,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 `;
 const Text = styled.p`
   font-size: 52px;
@@ -21,10 +22,11 @@ const Text = styled.p`
 `;
 const Stack = () => {
   const technologies = [
-    'HTML (HyperText Markup Language)',
-    'CSS (Cascading Style Sheets)',
+    'HTML',
+    'CSS ',
     'JavaScript',
     'React',
+    'Redux',
     'TypeScript',
     'Tailwind',
     'styled-components',
@@ -40,8 +42,8 @@ const Stack = () => {
             <Typed
               loop
               strings={[...['my stack '], ...technologies]}
-              backSpeed={95}
-              typeSpeed={95}
+              backSpeed={70}
+              typeSpeed={70}
             />
 
             {/* <Typed
