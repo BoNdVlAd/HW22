@@ -35,25 +35,10 @@ const Stack = () => {
   return (
     <>
       <Wrapper>
-        <span></span>
         <Text>
           <span>{`myStack: {`}</span>
           <div style={{ paddingLeft: '40px' }}>
-            <Typed
-              loop
-              strings={[...['my stack '], ...technologies]}
-              backSpeed={70}
-              typeSpeed={70}
-            />
-
-            {/* <Typed
-            strings={['Search for products', 'Search for categories', 'Search for brands']}
-            typeSpeed={40}
-            backSpeed={50}
-            attr="placeholder"
-            loop>
-            <input type="text" />
-          </Typed> */}
+            <Typed loop strings={technologies} backSpeed={70} typeSpeed={70} />
           </div>
           <span>{`{`}</span>
         </Text>

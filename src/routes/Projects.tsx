@@ -8,7 +8,6 @@ import { useTranslation } from 'react-i18next';
 const Projects = () => {
   const [t, i18n] = useTranslation();
   const PROJECTS: any = t('projects', { returnObjects: true });
-  console.log('HELLLOOO', PROJECTS);
 
   return (
     <>

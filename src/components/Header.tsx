@@ -17,6 +17,7 @@ const Flex = styled.div`
     justify-content: center;
     gap: 15px;
     padding-top: 15px;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -35,6 +36,7 @@ const Logo = styled.p`
 `;
 
 const Navigation = styled.nav`
+  z-index: 1000;
   position: fixed;
   min-height: 80px;
   background-color: #2b303a;
@@ -83,7 +85,6 @@ const Navigation = styled.nav`
     background-color: #2b303a;
     transition: all ease 0.3s;
     transform: translateY(-100vh);
-    z-index: 100;
     a {
       width: 50%;
       text-align: center;
@@ -110,6 +111,7 @@ const Navigation = styled.nav`
 `;
 
 const NavBtn = styled.button`
+  z-index: 999;
   width: 100%;
   color: #fff;
   font-size: 1.8rem;
@@ -172,7 +174,6 @@ const Header = () => {
   const links = ['projects', 'stack', 'contacts'];
 
   const pages: string[] = t('pages', { returnObjects: true });
-  console.log('RESULT', pages);
 
   const [active, setActive] = React.useState(0);
 
