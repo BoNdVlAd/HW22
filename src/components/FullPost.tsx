@@ -8,16 +8,22 @@ import { Link } from 'react-router-dom';
 const ContentImg = styled.img`
   max-width: 100%;
   max-height: 400px;
+  cursor: pointer;
+  transition: all ease 0.3s;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 20px;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 
 const Back = styled.button`
-  width: 60px;
-  height: 60px;
+  z-index: 100;
   border: none;
   background-color: transparent;
   position: absolute;
   left: 1rem;
-  top: 1rem;
+  top: 2rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -26,17 +32,69 @@ const Back = styled.button`
   &:hover {
     opacity: 0.5;
   }
+  @media only screen and (max-width: 1024px) {
+    top: 2rem;
+    left: -0.5rem;
+  }
+`;
+
+const Title = styled.h2`
+  width: 100%;
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  &::after {
+    content: '';
+    background-color: #2b303a;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
 `;
 
 const SubTitle = styled.p`
   font-size: 26px;
   font-weight: 500;
+  text-align: center;
+`;
+
+const Links = styled.p`
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  padding: 0 20px;
+  a {
+    font-size: 18px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+`;
+
+const ScreenShots = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+`;
+
+const Description = styled.p`
+  width: 100%;
+  text-align: left;
 `;
 
 const FullPost = (params: any) => {
   const [t, i18n] = useTranslation();
   let PROJECTS: any = t('projects', { returnObjects: true });
   const project = PROJECTS.filter((e: any) => e.id === Number(params.id));
+  console.log(project[0]);
   return (
     <>
       <Card>
@@ -48,8 +106,20 @@ const FullPost = (params: any) => {
             </svg>
           </Link>
         </Back>
-        <h2>{project[0].title}</h2>
+        <Title>{project[0].title}</Title>
+        <SubTitle>Description</SubTitle>
+        <Description>{project[0].description}</Description>
+        <SubTitle>Screenshots</SubTitle>
+        <ScreenShots>
+          {project[0].imgs.map((e: string) => {
+            return <ContentImg src={`/${e}`} alt="" />;
+          })}
+        </ScreenShots>
         <SubTitle>Links</SubTitle>
+        <Links>
+          <a href={project[0].links.github}>GitHub</a>
+          <a href={project[0].links.link}>Link to project</a>
+        </Links>
       </Card>
     </>
   );

@@ -3,45 +3,101 @@
   "projects": [
     {
       "id": 1,
+      "description": "A component was created that displays the publication. The component adapts to different screens and different content. To pass data to the component, I used props.",
       "title": "ReactJS. Fundamentals",
       "mainImg": "images/project1/mainImg.png",
       "text": "A functional component that can be used to display a post (like on Twitter or Facebook).",
-      "imgs": [
-        "images/project1/Capture.PNG",
-        "images/project1/Capture.PNG",
-        "images/project1/Capture.PNG",
-        "images/project1/Capture.PNG"
-      ]
+      "imgs": ["images/project1/screenshots/screen1.png"],
+      "links": {
+        "github": "https://github.com/BoNdVlAd/HW_16",
+        "link": "https://bondvlad.github.io/HW_16/"
+      }
     },
     {
       "id": 2,
+      "description": "The app is designed like Contacts in Android or IOS. The data is passed through props to the Contacts class component, which in turn renders a list of contacts using the Contact class component. The search logic is performed in the Contacts component. This component has a contacts state that stores the data coming from the props, and if data comes from the Search component (search by name, gender, phone number), the state will change its value to a filtered array based on the search parameters.",
       "title": "ReactJS. Hooks",
       "mainImg": "images/project2/mainImg.png",
-      "text": "List of contacts with search by name, number, and filters (by gender)."
+      "text": "List of contacts with search by name, number, and filters (by gender).",
+      "imgs": [
+        "images/project2/screenshots/screen1.png",
+        "images/project2/screenshots/screen2.png",
+        "images/project2/screenshots/screen3.png",
+        "images/project2/screenshots/screen4.png"
+      ],
+      "links": {
+        "github": "https://github.com/BoNdVlAd/HW_17",
+        "link": "https://bondvlad.github.io/HW_17/"
+      }
     },
     {
       "id": 3,
+      "description": "A timer component that can be adjusted by time and step. You can also pause and unpause the timer.",
       "title": "ReactJS. Class components State and life cycle",
       "mainImg": "images/project3/mainImg.png",
-      "text": "Countdown timer"
+      "text": "Countdown timer",
+
+      "imgs": [
+        "images/project3/screenshots/screen1.png",
+        "images/project3/screenshots/screen2.png",
+        "images/project3/screenshots/screen3.png"
+      ],
+      "links": {
+        "github": "https://github.com/BoNdVlAd/HW_18",
+        "link": "https://bondvlad.github.io/HW_18/"
+      }
     },
     {
       "id": 4,
+      "description": "A simple SPA with four pages of navigation.",
       "title": "ReactJS. The concept of SPA. Navigation.",
       "mainImg": "images/project4/mainImg.png",
-      "text": "A simple SPA with four pages of navigation."
+      "text": "A simple SPA with four pages of navigation.",
+      "imgs": [
+        "images/project4/screenshots/screen1.png",
+        "images/project4/screenshots/screen2.png",
+        "images/project4/screenshots/screen3.png",
+        "images/project4/screenshots/screen4.png",
+        "images/project4/screenshots/screen5.png"
+      ],
+      "links": {
+        "github": "https://github.com/BoNdVlAd/HW_19",
+        "link": "https://bondvlad.github.io/HW_19/"
+      }
     },
     {
       "id": 5,
+      "description": "Login and registration form in the application (with data validation check during registration).",
       "title": "ReactJS. Approaches to styling. StyledComponents. Animations.",
       "mainImg": "images/project5/mainImg.png",
-      "text": "Login and registration form in the application (with data validation check during registration)."
+      "text": "Login and registration form in the application (with data validation check during registration).",
+      "imgs": [
+        "images/project5/screenshots/screen1.png",
+        "images/project5/screenshots/screen2.png",
+        "images/project5/screenshots/screen3.png",
+        "images/project5/screenshots/screen4.png"
+      ],
+      "links": {
+        "github": "https://github.com/BoNdVlAd/HW_20",
+        "link": "https://bondvlad.github.io/HW_20/"
+      }
     },
     {
       "id": 6,
+      "description": "An application that contains a post creation form and a page displaying created posts. For global post saving, we used react-redux (Redux Toolkit).",
       "title": "Redux",
       "mainImg": "images/project6/mainImg.png",
-      "text": "An application that contains a post creation form and a page displaying created posts. For global post saving, we used react-redux (Redux Toolkit)."
+      "text": "An application that contains a post creation form and a page displaying created posts. For global post saving, we used react-redux (Redux Toolkit).",
+      "imgs": [
+        "images/project6/screenshots/screen1.png",
+        "images/project6/screenshots/screen2.png",
+        "images/project6/screenshots/screen3.png",
+        "images/project6/screenshots/screen4.png"
+      ],
+      "links": {
+        "github": "https://github.com/BoNdVlAd/HW_21",
+        "link": "https://bondvlad.github.io/HW_21/"
+      }
     }
   ]
 }
