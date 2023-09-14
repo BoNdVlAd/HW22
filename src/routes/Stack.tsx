@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Typed from 'react-typed';
+// import Typed from 'react-typed';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -35,13 +35,13 @@ const Stack = () => {
   return (
     <>
       <Wrapper>
-        <Text>
-          <span>{`myStack: {`}</span>
+        {/* <Text> */}
+        {/* <span>{`myStack: {`}</span>
           <div style={{ paddingLeft: '40px' }}>
             <Typed loop strings={technologies} backSpeed={70} typeSpeed={70} />
           </div>
           <span>{`{`}</span>
-        </Text>
+        </Text> */}
       </Wrapper>
     </>
   );
