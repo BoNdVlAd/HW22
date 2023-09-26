@@ -11,6 +11,7 @@ import './i18n';
 import { Provider } from 'react-redux';
 import { store } from './store';
 import Contacts from './routes/Contacts';
+import Resume from './routes/Resume';
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: 'projects/:projectId',
         element: <Project />,
+      },
+      {
+        path: 'resume',
+        element: <Resume />,
       },
     ],
   },

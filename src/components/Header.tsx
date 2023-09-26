@@ -171,7 +171,7 @@ const Header = () => {
   const navRef = React.useRef<HTMLElement>(null);
   const navigate = useNavigate();
 
-  const links = ['projects', 'stack', 'contacts'];
+  const links = ['projects', 'stack', 'contacts', 'resume'];
 
   const pages: string[] = t('pages', { returnObjects: true });
 
